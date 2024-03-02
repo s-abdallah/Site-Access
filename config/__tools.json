@@ -1,0 +1,852 @@
+{
+  "USERS": {
+    "title": "Users",
+    "options": ["ADD", "EDIT", "REMOVE"],
+    "fields": {
+      "full_name": {
+        "type": "name",
+        "required": true,
+        "description": "The users full name",
+        "listby": 1
+      },
+      "email": {
+        "type": "email",
+        "required": true,
+        "placeholder": "me@you.com",
+        "description": "The users email address, also their username"
+      },
+      "password": {
+        "type": "password",
+        "required": true,
+        "description": "10 - 20 characters, at least 1 uppercase, at least 1 lowercase, at least 1 number",
+        "fieldlength": 20
+      },
+      "permissions_level": {
+        "type": "select",
+        "options": [["Administrator", "A"]],
+        "required": true,
+        "description": "The users access permissions"
+      },
+      "status": {
+        "type": "select",
+        "options": [
+          ["Active", "A"],
+          ["Suspended", "S"]
+        ],
+        "required": true,
+        "description": "The users current status"
+      }
+    }
+  },
+  "GALLERIES": {
+    "title": "Galleries",
+    "options": ["ALL", "ADD", "EDIT", "REMOVE"],
+    "media": true,
+    "fields": {
+      "name": {
+        "type": "title",
+        "required": true,
+        "description": "The name of the gallery as reference",
+        "listby": 0,
+        "listall": 1
+      },
+      "title": {
+        "type": "multiselect",
+        "options": "option-1",
+        "required": true,
+        "description": "The title of the gallery"
+      },
+      "subtitle": {
+        "type": "multiselect",
+        "options": "option-2",
+        "required": true,
+        "description": "The title of the gallery"
+      },
+      "selected_media": {
+        "type": "media",
+        "required": true,
+        "description": ""
+      },
+      "tags": {
+        "type": "text",
+        "required": false,
+        "placeholder": "house,dog,man walking",
+        "description": "Additional tags to identify this entry",
+        "listall": 1
+      }
+    }
+  },
+  "MINISITES": {
+    "title": "Minisites",
+    "options": ["ADD", "EDIT", "REMOVE"],
+    "media": true,
+    "fields": {
+      "name": {
+        "type": "title",
+        "required": true,
+        "description": "The name of the gallery as reference",
+        "listby": 0
+      },
+      "title_line_1": {
+        "type": "text",
+        "required": false,
+        "description": "The second title line that will appear on this slide",
+        "clone": true,
+        "cloneG": true
+      },
+      "title_line_2": {
+        "type": "text",
+        "required": false,
+        "description": "The second title line that will appear on this slide",
+        "clone": true,
+        "cloneG": true
+      },
+      "selected_media": {
+        "type": "media",
+        "required": true,
+        "description": ""
+      },
+      "tags": {
+        "type": "text",
+        "required": false,
+        "placeholder": "house,dog,man walking",
+        "description": "Additional tags to identify this entry"
+      }
+    }
+  },
+  "HOMEPAGESLIDER": {
+    "title": "Homepage Slider",
+    "options": ["ALL", "ADD", "EDIT", "REMOVE"],
+    "media": true,
+    "fields": {
+      "title_line_1": {
+        "type": "text",
+        "required": true,
+        "description": "The first title line that will appear on this slide",
+        "listby": 0,
+        "listall": 1
+      },
+      "title_line_2": {
+        "type": "text",
+        "required": false,
+        "description": "The second title line that will appear on this slide",
+        "clone": true,
+        "cloneG": true
+      },
+      "link": {
+        "type": "text",
+        "required": true,
+        "description": "Copy and paste the URL of the page to link to here",
+        "clone": true,
+        "cloneG": true
+      },
+      "link": {
+        "type": "text",
+        "required": true,
+        "description": "Copy and paste the URL of the page to link to here",
+        "clone": true,
+        "cloneG": true
+      },
+      "order_weight": {
+        "type": "orderweight",
+        "required": true,
+        "description": "The order from highest to lowest that items should appear in (0 = default, lowest)",
+        "listall": 1
+      },
+      "tags": {
+        "type": "text",
+        "required": false,
+        "placeholder": "house,dog,man walking",
+        "description": "Additional tags to identify this entry",
+        "listall": 1
+      }
+    }
+  },
+  "BROKERS": {
+    "title": "Brokers",
+    "options": ["ALL", "ADD", "EDIT", "REMOVE"],
+    "media": true,
+    "fields": {
+      "first_name": {
+        "type": "text",
+        "required": true,
+        "description": "The brokers first name",
+        "listby": 0,
+        "listall": 1
+      },
+      "last_name": {
+        "type": "text",
+        "required": true,
+        "description": "The brokers last name",
+        "listby": 1,
+        "listall": 1
+      },
+      "title": {
+        "type": "text",
+        "required": true,
+        "description": "The brokers title",
+        "listall": 1,
+        "clone": true
+      },
+      "phone_number": {
+        "type": "text",
+        "required": true,
+        "description": "The brokers phone number, can be land or cell,format: 111.111.1111"
+      },
+      "email": {
+        "type": "email",
+        "required": true,
+        "placeholder": "me@you.com",
+        "description": "The brokers email address",
+        "listall": 1
+      },
+      "summary": {
+        "type": "copy",
+        "required": true,
+        "description": "A short summary of who the broker is"
+      },
+      "bio": {
+        "type": "copy",
+        "required": true,
+        "description": "The full bio of the broker",
+        "richeditor": true
+      },
+      "office": {
+        "type": "select",
+        "multiselect": false,
+        "options": "offices:address",
+        "required": true,
+        "description": "Which office the broker works out of"
+      },
+      "assistant": {
+        "type": "select",
+        "multiselect": false,
+        "options": "brokers:first_name,last_name",
+        "required": false,
+        "description": "Which office the broker works out of most often"
+      },
+      "bio_picture": {
+        "type": "media",
+        "required": true,
+        "description": "",
+        "max": 1,
+        "allowed": ["jpg"]
+      },
+      "header_background": {
+        "type": "media",
+        "required": true,
+        "description": "",
+        "max": 1,
+        "allowed": ["pdf"]
+      },
+      "order_weight": {
+        "type": "orderweight",
+        "required": true,
+        "description": "The order from highest to lowest that items should appear in (0 = default, lowest)"
+      },
+      "tags": {
+        "type": "text",
+        "required": false,
+        "placeholder": "house,dog,man walking",
+        "description": "Additional tags to identify this entry"
+      }
+    }
+  },
+  "INTERRUPTS": {
+    "title": "Interrupts",
+    "options": ["ADD", "EDIT", "REMOVE"],
+    "media": true,
+    "fields": {
+      "name": {
+        "type": "text",
+        "required": true,
+        "description": "Name of the interrupt",
+        "listby": 0
+      },
+      "content": {
+        "type": "copy",
+        "required": true,
+        "description": "The content to appear within the interrupt",
+        "richeditor": true
+      },
+      "link_title": {
+        "type": "text",
+        "required": true,
+        "description": "Title of the link to appear on the screen",
+        "clone": true
+      },
+      "link_to": {
+        "type": "text",
+        "required": true,
+        "description": "Where do we want this interrupt to link to"
+      },
+      "image": {
+        "type": "media",
+        "required": true,
+        "description": "",
+        "max": 1,
+        "allowed": ["jpg"]
+      },
+      "appears_on": {
+        "type": "select",
+        "multiselect": false,
+        "options": [["Brokers", "broker"]],
+        "required": false,
+        "description": "Which page or section of the site this should be used on"
+      },
+      "tags": {
+        "type": "text",
+        "required": false,
+        "placeholder": "house,dog,man walking",
+        "description": "Additional tags to identify this entry"
+      }
+    }
+  },
+  "OFFICES": {
+    "title": "Office Locations",
+    "options": ["ADD", "EDIT", "REMOVE"],
+    "media": true,
+    "fields": {
+      "address": {
+        "type": "text",
+        "required": true,
+        "description": "Street address",
+        "listby": 0
+      },
+      "address_2": {
+        "type": "text",
+        "required": true,
+        "description": "Secondary address"
+      },
+      "city": {
+        "type": "text",
+        "required": true,
+        "description": "City where the office is located"
+      },
+      "state": {
+        "type": "state",
+        "required": true,
+        "description": "State where the office is located"
+      },
+      "zip_code": {
+        "type": "text",
+        "required": true,
+        "description": "Zip code where the office is located"
+      },
+      "position": {
+        "type": "latlon",
+        "required": true,
+        "description": "The geographic coordinates of the marker"
+      },
+      "phone_number": {
+        "type": "text",
+        "required": true,
+        "description": "Direct phone number for this office"
+      },
+      "email_address": {
+        "type": "text",
+        "required": false,
+        "description": "Direct email address for this office"
+      },
+      "picture": {
+        "type": "media",
+        "required": true,
+        "description": "",
+        "max": 1,
+        "allowed": ["jpg"]
+      },
+      "tags": {
+        "type": "text",
+        "required": false,
+        "placeholder": "house,dog,man walking",
+        "description": "Additional tags to identify this entry"
+      }
+    }
+  },
+  "PARTNERS": {
+    "title": "Brokerage Partners",
+    "options": ["ADD", "EDIT", "REMOVE"],
+    "media": true,
+    "fields": {
+      "name": {
+        "type": "text",
+        "required": true,
+        "description": "Partners name",
+        "listby": 0
+      },
+      "summary": {
+        "type": "copy",
+        "required": true,
+        "description": "Summary of the partners offerings or involvement"
+      },
+      "website_url": {
+        "type": "text",
+        "required": false,
+        "description": "Partners web site, if any"
+      },
+      "allow_search": {
+        "type": "select",
+        "multiselect": false,
+        "options": [
+          ["Yes", "Y"],
+          ["No", "N"]
+        ],
+        "required": true,
+        "description": "If we are going to allow users to search partner properties"
+      },
+      "picture": {
+        "type": "media",
+        "required": true,
+        "description": "",
+        "max": 1,
+        "allowed": ["jpg"]
+      },
+      "order_weight": {
+        "type": "orderweight",
+        "required": true,
+        "description": "The order from highest to lowest that items should appear in (0 = default,lowest)"
+      },
+      "tags": {
+        "type": "text",
+        "required": false,
+        "placeholder": "house,dog,man walking",
+        "description": "Additional tags to identify this entry"
+      }
+    }
+  },
+  "COMMUNITIES": {
+    "title": "Communities",
+    "options": ["ADD", "EDIT", "REMOVE"],
+    "media": true,
+    "fields": {
+      "name": {
+        "type": "text",
+        "required": true,
+        "description": "Name of the community",
+        "listby": 0
+      },
+      "summary": {
+        "type": "copy",
+        "required": true,
+        "description": "Summary of the community"
+      },
+      "position": {
+        "type": "latlon",
+        "required": true,
+        "description": "The geographic coordinates of the community"
+      },
+      "logo": {
+        "type": "media",
+        "required": true,
+        "description": "",
+        "max": 1,
+        "allowed": ["jpg"]
+      },
+      "header_background": {
+        "type": "media",
+        "required": true,
+        "description": "",
+        "max": 1,
+        "allowed": ["jpg"]
+      },
+      "header_caption_1": {
+        "type": "text",
+        "required": true,
+        "description": "First line of the caption on the header image"
+      },
+      "header_caption_2": {
+        "type": "text",
+        "required": false,
+        "description": "Second line of the caption on the header image"
+      },
+      "order_weight": {
+        "type": "orderweight",
+        "required": true,
+        "description": "The order from highest to lowest that items should appear in (0 = default,lowest)"
+      },
+      "tags": {
+        "type": "text",
+        "required": false,
+        "placeholder": "house,dog,man walking",
+        "description": "Additional tags to identify this entry"
+      }
+    }
+  },
+  "NEIGHBORHOODS": {
+    "title": "Neighborhood",
+    "options": ["ADD", "EDIT", "REMOVE"],
+    "media": true,
+    "fields": {
+      "name": {
+        "type": "text",
+        "required": true,
+        "description": "Name of the neighborhood",
+        "listby": 0
+      },
+      "summary": {
+        "type": "copy",
+        "required": true,
+        "description": "Summary of the neighborhood"
+      },
+      "position": {
+        "type": "latlon",
+        "required": true,
+        "description": "The geographic coordinates of the neighborhood"
+      },
+      "hero_image": {
+        "type": "media",
+        "required": true,
+        "description": "",
+        "max": 1,
+        "allowed": ["jpg"]
+      },
+      "site_map": {
+        "type": "media",
+        "required": true,
+        "description": "",
+        "max": 1,
+        "allowed": ["jpg"]
+      },
+      "order_weight": {
+        "type": "orderweight",
+        "required": true,
+        "description": "The order from highest to lowest that items should appear in (0 = default,lowest)"
+      },
+      "tags": {
+        "type": "text",
+        "required": false,
+        "placeholder": "house,dog,man walking",
+        "description": "Additional tags to identify this entry"
+      }
+    }
+  },
+  "HIGHLIGHTS": {
+    "title": "Property Highlights",
+    "options": ["ADD", "EDIT", "REMOVE"],
+    "media": true,
+    "fields": {
+      "name": {
+        "type": "text",
+        "required": true,
+        "description": "The name to be able to look up this highlight",
+        "listby": 0
+      },
+      "title": {
+        "type": "text",
+        "required": true,
+        "description": "The title of the property highlight"
+      },
+      "description": {
+        "type": "copy",
+        "required": true,
+        "description": "The description of the property highlight"
+      },
+      "selected_media": {
+        "type": "media",
+        "required": false,
+        "description": "",
+        "max": 1
+      },
+      "tags": {
+        "type": "text",
+        "required": false,
+        "placeholder": "house,dog,man walking",
+        "description": "Additional tags to identify this entry"
+      }
+    }
+  },
+  "PROPERTIES": {
+    "title": "Properties",
+    "options": ["ALL", "ADD", "EDIT", "REMOVE"],
+    "media": true,
+    "fields": {
+      "name": {
+        "type": "text",
+        "required": true,
+        "description": "The title of the item to be published",
+        "listall": 1
+      },
+      "mls_number": {
+        "type": "text",
+        "required": true,
+        "readonly": true,
+        "description": "Number that represents the proeprty in MLS",
+        "listby": 1,
+        "listall": 1
+      },
+      "status": {
+        "type": "select",
+        "multiselect": false,
+        "options": [
+          ["Active", "active"],
+          ["Sale Pending", "sale pending"]
+        ],
+        "required": true,
+        "description": "The status of the property"
+      },
+      "featured": {
+        "type": "select",
+        "multiselect": false,
+        "options": [
+          ["None", "nn"],
+          ["Ski In/Ski Out", "siso"],
+          ["Waterfront", "wf"],
+          ["Golf", "gf"],
+          ["Moonlight Basin", "mb"],
+          ["Spanish Peaks", "sp"]
+        ],
+        "required": false,
+        "description": "The status of the property"
+      },
+      "address_1": {
+        "type": "text",
+        "required": true,
+        "description": "Will appear in place of name if it is not supplied",
+        "listby": 0
+      },
+      "address_2": {
+        "type": "text",
+        "required": false,
+        "description": ""
+      },
+      "city": {
+        "type": "text",
+        "required": true,
+        "description": "The city that the property is located in",
+        "listall": 1
+      },
+      "state": {
+        "type": "state",
+        "required": true,
+        "description": "The state that the property is located in"
+      },
+      "zip": {
+        "type": "text",
+        "required": true,
+        "description": "The zip code that the property is located in"
+      },
+      "community": {
+        "type": "select",
+        "multiselect": false,
+        "options": "communities:name",
+        "required": false,
+        "description": "The community this property may be part of, if any"
+      },
+      "neighborhood": {
+        "type": "select",
+        "multiselect": false,
+        "options": "neighborhoods:name",
+        "required": false,
+        "description": "A specific neighborhood within a chosen community, if any"
+      },
+      "position": {
+        "type": "latlon",
+        "required": true,
+        "description": "The geographic coordinates of the property"
+      },
+      "asking_price": {
+        "type": "text",
+        "required": true,
+        "description": "The price of the property, do not include $, only comma's where needed"
+      },
+      "price_psf": {
+        "type": "text",
+        "required": false,
+        "description": "The price per square foot if a home or commerical"
+      },
+      "taxes": {
+        "type": "text",
+        "required": false,
+        "description": "The estimated or last known taxes"
+      },
+      "fees_or_dues": {
+        "type": "text",
+        "required": false,
+        "description": "Any HOA or other fees"
+      },
+      "type_of_property": {
+        "type": "select",
+        "multiselect": false,
+        "options": [
+          ["Commercial", "C"],
+          ["Industrial", "I"],
+          ["Residential", "RS"],
+          ["Retail", "RT"]
+        ],
+        "required": true,
+        "description": "The type of property"
+      },
+      "year_built": {
+        "type": "text",
+        "required": false,
+        "description": "The year the property was built",
+        "listall": 1
+      },
+      "beds": {
+        "type": "select",
+        "options": [
+          ["1", "1"],
+          ["2", "2"],
+          ["3", "3"],
+          ["4", "4"],
+          ["5", "5"],
+          ["6", "6"],
+          ["7", "7"],
+          ["8", "8"],
+          ["9", "9"],
+          ["10", "10"]
+        ],
+        "required": false,
+        "description": "The number of bedrooms"
+      },
+      "baths": {
+        "type": "select",
+        "options": [
+          ["1", "1"],
+          ["2", "2"],
+          ["3", "3"],
+          ["4", "4"],
+          ["5", "5"],
+          ["6", "6"],
+          ["7", "7"],
+          ["8", "8"],
+          ["9", "9"],
+          ["10", "10"]
+        ],
+        "required": false,
+        "description": "The number of bathrooms"
+      },
+      "garage_bays": {
+        "type": "select",
+        "options": [
+          ["1", "1"],
+          ["2", "2"],
+          ["3", "3"],
+          ["4", "4"],
+          ["5", "5"],
+          ["6", "6"],
+          ["7", "7"],
+          ["8", "8"],
+          ["9", "9"],
+          ["10", "10"]
+        ],
+        "required": false,
+        "description": "The number of garage bays if a home"
+      },
+      "sqft": {
+        "type": "text",
+        "required": false,
+        "description": "The square footage if a home or commerical"
+      },
+      "lot_size": {
+        "type": "text",
+        "required": false,
+        "description": "The lot size if land"
+      },
+      "broker_1": {
+        "type": "select",
+        "multiselect": false,
+        "options": "brokers:first_name,last_name",
+        "required": true,
+        "description": "The primary broker on the listing"
+      },
+      "broker_2": {
+        "type": "select",
+        "multiselect": false,
+        "options": "brokers:first_name,last_name",
+        "required": false,
+        "description": "Another broker if a shared listing"
+      },
+      "agent_insights": {
+        "type": "copy",
+        "richeditor": false,
+        "required": false,
+        "description": "Notes from the broker about this property"
+      },
+      "overview": {
+        "type": "copy",
+        "richeditor": false,
+        "required": true,
+        "description": "Overview of this property"
+      },
+      "features": {
+        "type": "copy",
+        "richeditor": true,
+        "required": false,
+        "description": "Overview of this property"
+      },
+      "highlight_1": {
+        "type": "select",
+        "multiselect": false,
+        "options": "highlights:name",
+        "required": false,
+        "description": ""
+      },
+      "highlight_2": {
+        "type": "select",
+        "multiselect": false,
+        "options": "highlights:name",
+        "required": false,
+        "description": ""
+      },
+      "highlight_3": {
+        "type": "select",
+        "multiselect": false,
+        "options": "highlights:name",
+        "required": false,
+        "description": ""
+      },
+      "featured_image": {
+        "type": "media",
+        "required": true,
+        "max": 1,
+        "description": "The featured image that will appear at the top of the page"
+      },
+      "downloads": {
+        "type": "media",
+        "required": false,
+        "max": 5,
+        "description": "Downloadable PDF files"
+      },
+      "interior_gallery": {
+        "type": "select",
+        "multiselect": false,
+        "options": "galleries:name",
+        "required": false,
+        "description": "Images to be shown for interior images"
+      },
+      "exterior_gallery": {
+        "type": "select",
+        "multiselect": false,
+        "options": "galleries:name",
+        "required": false,
+        "description": "Images to be shown for exterior images"
+      },
+      "plans_gallery": {
+        "type": "select",
+        "multiselect": false,
+        "options": "galleries:name",
+        "required": false,
+        "description": "Images to be shown for plan images"
+      },
+      "misc_gallery": {
+        "type": "select",
+        "multiselect": false,
+        "options": "galleries:name",
+        "required": false,
+        "description": "Misc images, if not using other galleries select only this one"
+      },
+      "order_weight": {
+        "type": "orderweight",
+        "required": true,
+        "description": "The order from highest to lowest that items should appear in (0 = default,lowest)"
+      },
+      "tags": {
+        "type": "text",
+        "required": false,
+        "placeholder": "house,dog,man walking",
+        "description": "Additional tags to identify this entry"
+      }
+    }
+  }
+}

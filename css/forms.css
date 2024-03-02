@@ -1,0 +1,942 @@
+/* ***********************************************************
+## COLORS
+*********************************************************** */
+/* ***********************************************************
+## COLORS
+*********************************************************** */
+/* set up colors that will be used over and over again, in RGBA, A ommitted so that it can be set as needed but maintain base color */
+/* ***********************************************************
+## FONTS
+*********************************************************** */
+/* ***********************************************************
+## FONTS
+*********************************************************** */
+html,
+body {
+  font-size: 62.5%;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 300;
+}
+
+/*@font-face {
+	font-family: entypo;
+	font-style: normal;
+	font-weight: normal;
+	src: url(http://weloveiconfonts.com/api/fonts/entypo/entypo.eot);
+	src: url(http://weloveiconfonts.com/api/fonts/entypo/entypo.eot?#iefix) format("eot"), url(http://weloveiconfonts.com/api/fonts/entypo/entypo.woff) format("woff"), url(http://weloveiconfonts.com/api/fonts/entypo/entypo.ttf) format("truetype"), url(http://weloveiconfonts.com/api/fonts/entypo/entypo.svg#entypo) format("svg");
+}*/
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Roboto Condensed';
+  font-style: normal;
+  font-weight: 400;
+  src: local("Roboto Condensed"), local("RobotoCondensed-Regular"), url(../fonts/roboto/Zd2E9abXLFGSr9G3YK2MsIPxuqWfQuZGbz5Rz4Zu1gk.woff2) format("woff2");
+  unicode-range: U+0460-052F, U+20B4, U+2DE0-2DFF, U+A640-A69F;
+}
+/* cyrillic */
+@font-face {
+  font-family: 'Roboto Condensed';
+  font-style: normal;
+  font-weight: 400;
+  src: local("Roboto Condensed"), local("RobotoCondensed-Regular"), url(../fonts/roboto/Zd2E9abXLFGSr9G3YK2MsENRpQQ4njX3CLaCqI4awdk.woff2) format("woff2");
+  unicode-range: U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+/* greek-ext */
+@font-face {
+  font-family: 'Roboto Condensed';
+  font-style: normal;
+  font-weight: 400;
+  src: local("Roboto Condensed"), local("RobotoCondensed-Regular"), url(../fonts/roboto/Zd2E9abXLFGSr9G3YK2MsET2KMEyTWEzJqg9U8VS8XM.woff2) format("woff2");
+  unicode-range: U+1F00-1FFF;
+}
+/* greek */
+@font-face {
+  font-family: 'Roboto Condensed';
+  font-style: normal;
+  font-weight: 400;
+  src: local("Roboto Condensed"), local("RobotoCondensed-Regular"), url(../fonts/roboto/Zd2E9abXLFGSr9G3YK2MsMH5J2QbmuFthYTFOnnSRco.woff2) format("woff2");
+  unicode-range: U+0370-03FF;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Roboto Condensed';
+  font-style: normal;
+  font-weight: 400;
+  src: local("Roboto Condensed"), local("RobotoCondensed-Regular"), url(../fonts/roboto/Zd2E9abXLFGSr9G3YK2MsDcCYxVKuOcslAgPRMZ8RJE.woff2) format("woff2");
+  unicode-range: U+0102-0103, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Roboto Condensed';
+  font-style: normal;
+  font-weight: 400;
+  src: local("Roboto Condensed"), local("RobotoCondensed-Regular"), url(../fonts/roboto/Zd2E9abXLFGSr9G3YK2MsNKDSU5nPdoBdru70FiVyb0.woff2) format("woff2");
+  unicode-range: U+0100-024F, U+1E00-1EFF, U+20A0-20AB, U+20AD-20CF, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Roboto Condensed';
+  font-style: normal;
+  font-weight: 400;
+  src: local("Roboto Condensed"), local("RobotoCondensed-Regular"), url(../fonts/roboto/Zd2E9abXLFGSr9G3YK2MsH4vxAoi6d67T_UKWi0EoHQ.woff2) format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215;
+}
+/* ***********************************************************
+## FUNCTIONS
+*********************************************************** */
+/* ******************************************************** */
+/* this is to clean up browsers trying to force styling on invalid required fields */
+*:focus {
+  box-shadow: none;
+  outline: none;
+  outline-width: 0;
+}
+*:required {
+  box-shadow: none;
+  outline: none;
+  outline-width: 0;
+}
+*:invalid {
+  box-shadow: none;
+  outline: none;
+  outline-width: 0;
+}
+
+input::-webkit-input-placeholder {
+  /* WebKit browsers */
+  text-align: right;
+  color: rgba(189, 49, 40, 0.75);
+  padding-right: 50px;
+  font-family: "Roboto Condensed";
+  text-transform: uppercase;
+}
+
+input:-moz-placeholder {
+  /* Mozilla Firefox 4 to 18 */
+  text-align: right;
+  color: rgba(189, 49, 40, 0.75);
+  padding-right: 50px;
+  font-family: "Roboto Condensed";
+  text-transform: uppercase;
+}
+
+input::-moz-placeholder {
+  /* Mozilla Firefox 19+ */
+  text-align: right;
+  color: rgba(189, 49, 40, 0.75);
+  padding-right: 50px;
+  font-family: "Roboto Condensed";
+  text-transform: uppercase;
+}
+
+input:-ms-input-placeholder {
+  /* Internet Explorer 10+ */
+  text-align: right;
+  color: rgba(189, 49, 40, 0.75);
+  padding-right: 50px;
+  font-family: "Roboto Condensed";
+  text-transform: uppercase;
+}
+
+form {
+  margin: 4vw auto 4vw auto;
+  padding: 2vw;
+  width: 90%;
+  vertical-align: top;
+  border: solid rgba(218, 218, 218, 0.25) 1px;
+  -webkit-box-shadow: 0 4px 6px -6px black;
+  -moz-box-shadow: 0 4px 6px -6px black;
+  box-shadow: 0 4px 6px -6px black;
+  /*.showpassword{
+    &:hover{
+      cursor: pointer;
+      color: #f00;
+    }
+  }*/
+  /*& > label{*/
+  /*clear: both;
+  display: block;
+  font-size: 1.5rem;
+  margin: 0 0 0 25%;*/
+  /*&.error{
+      color: rgba(255,0,0,1.0);
+  }*/
+  /*&.success{
+      color: rgba(0,255,0,1.0);
+  }*/
+  /*}*/
+  /*& input[type="submit"]{*/
+  /*&[id=filter]{
+    input,
+    textarea,
+    select{
+      font-size: 0.75rem;
+    }
+  }*/
+  /*&#neo__mailinglist{
+      margin: 5% 0 5% 0;
+      border: solid rgba(104, 104, 104, 1.0) 0.25rem;
+      background: rgba(232, 232, 232, 1.0);
+      padding: 2%;
+      width: auto;
+      & input{
+          width: 65%;
+          clear: right;
+          margin: 2% 0 2% 0;
+      }
+      & label{
+          float: none;
+          width: 100%;
+          margin: 0 0 10% 0;
+          font-size: 3rem;
+          text-align: left;
+          &#mailinglistresponse{
+              width: 100%;
+              text-align: right;
+              margin: 0;
+              font-size: 1.5rem;
+          }
+      }
+      & input[type=submit]{
+          float: right;
+          width: 25%;
+          margin: 2% 0 2% 2%;
+      }
+  }*/
+  /* handle the query builder here */
+}
+form fieldset {
+  border: none;
+  margin: 0 0 3vw 0;
+  padding: 0 0 0 0;
+  position: relative;
+}
+form fieldset:after {
+  clear: both;
+  content: "";
+  display: block;
+}
+form fieldset label {
+  font-weight: 200;
+  font-family: "Roboto";
+  line-height: 2rem;
+  letter-spacing: 1px;
+  text-transform: capitalize;
+  text-decoration: none;
+  font-size: 1.4rem;
+  color: rgba(68, 74, 84, 0.45);
+  font-style: italic;
+  position: absolute;
+  top: 25px;
+  left: 15px;
+  -webkit-transform: translateY(-50%);
+  transform: translateY(-50%);
+  pointer-events: none;
+  -webkit-transition: all 0.15s ease-out 0s;
+  transition: all 0.15s ease-out 0s;
+}
+form fieldset label#messages {
+  pointer-events: inherit;
+  text-align: right;
+  position: relative;
+  display: block;
+  top: unset;
+  left: unset;
+}
+form fieldset label#messages a {
+  text-align: right;
+  display: inline;
+  float: right;
+  margin-left: 5px;
+  font-weight: 200;
+  font-family: "Roboto";
+  line-height: 2rem;
+  letter-spacing: 1px;
+  text-transform: capitalize;
+  text-decoration: none;
+  font-size: 1.5rem;
+  color: #1786ab;
+  font-style: italic;
+}
+form fieldset label#messages a:hover {
+  color: rgba(0, 0, 0, 0.75);
+}
+form fieldset input,
+form fieldset textarea,
+form fieldset select {
+  padding: 15px 0 15px 20px;
+  display: inline-block;
+  width: 100%;
+  font-style: normal;
+  font-weight: 200;
+  font-family: "Roboto";
+  line-height: 2rem;
+  letter-spacing: 1px;
+  text-decoration: none;
+  font-size: 1.4rem;
+  text-align: left;
+  vertical-align: middle;
+  color: black;
+  text-transform: inherit;
+  border: solid rgba(0, 0, 0, 0.25) 2px;
+  box-sizing: border-box;
+}
+form fieldset input:not([disabled]):not([readonly="readonly"]):not([data-type*="_cancel"], [data-type*="_submit"]):hover,
+form fieldset textarea:not([disabled]):not([readonly="readonly"]):not([data-type*="_cancel"], [data-type*="_submit"]):hover,
+form fieldset select:not([disabled]):not([readonly="readonly"]):not([data-type*="_cancel"], [data-type*="_submit"]):hover {
+  cursor: pointer;
+}
+form fieldset input[disabled=disabled],
+form fieldset textarea[disabled=disabled],
+form fieldset select[disabled=disabled] {
+  background: #dadada;
+}
+form fieldset input[type=checkbox],
+form fieldset textarea[type=checkbox],
+form fieldset select[type=checkbox] {
+  width: auto;
+  margin: 0 0.5vw 0 0;
+  /*float: left;
+  background: red;*/
+  /*display: inline-block;*/
+  /*& + span{
+    float: left;
+    height: 5vh;
+    line-height: 5vh;
+    margin: 0 2.5vw 1vh 0.5vw;
+  }*/
+}
+form fieldset input[name*=filter_],
+form fieldset textarea[name*=filter_],
+form fieldset select[name*=filter_] {
+  float: none;
+  width: 10vw;
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  -ms-border-radius: 0;
+  -o-border-radius: 0;
+  border-radius: 0;
+  border: solid black 1px;
+  /*font-size: 0.75rem*/
+}
+form fieldset input[data-type="date"],
+form fieldset textarea[data-type="date"],
+form fieldset select[data-type="date"] {
+  width: 15vw;
+}
+form fieldset input[data-type="date"][name*=filter_],
+form fieldset textarea[data-type="date"][name*=filter_],
+form fieldset select[data-type="date"][name*=filter_] {
+  width: 10vw;
+}
+form fieldset input[data-type="time"],
+form fieldset textarea[data-type="time"],
+form fieldset select[data-type="time"] {
+  width: 7vw;
+  margin: 0 2vw 0 0;
+}
+form fieldset input[data-type="password"],
+form fieldset textarea[data-type="password"],
+form fieldset select[data-type="password"] {
+  width: 35vw;
+  text-align: center;
+  margin: 0 2vw 0 0;
+}
+form fieldset input[data-type="orderweight"],
+form fieldset textarea[data-type="orderweight"],
+form fieldset select[data-type="orderweight"] {
+  width: 10%;
+}
+form fieldset input:focus, form fieldset input:active,
+form fieldset textarea:focus,
+form fieldset textarea:active,
+form fieldset select:focus,
+form fieldset select:active {
+  outline: none;
+  background: rgba(218, 218, 218, 0.1);
+  padding-left: 20px;
+}
+form fieldset input.has-value,
+form fieldset textarea.has-value,
+form fieldset select.has-value {
+  padding-left: 20px;
+  border-bottom: solid #dadada 2px;
+}
+form fieldset input:focus + label, form fieldset input.has-value + label,
+form fieldset textarea:focus + label,
+form fieldset textarea.has-value + label,
+form fieldset select:focus + label,
+form fieldset select.has-value + label {
+  top: -10px;
+  left: 0;
+  font-size: 1.2rem;
+  color: #444a54;
+}
+form fieldset select:focus, form fieldset select:active {
+  background-image: url("../ui/icon-dropdown.svg");
+  background-position: 95% 50%;
+  background-size: auto 25%;
+  background-color: white;
+  background-repeat: no-repeat;
+}
+form fieldset input[type="text"], form fieldset input[type="password"], form fieldset input[type="email"] {
+  border: none;
+  border: solid black 1px;
+}
+form fieldset p {
+  margin: 0;
+  font-size: 1rem;
+  line-height: 2rem;
+  clear: both;
+}
+form fieldset.error > label {
+  color: #bd3128;
+}
+form fieldset.error input, form fieldset.error select, form fieldset.error > div:not([class="maparea"]):nth-of-type(1), form fieldset.error textarea {
+  border: solid #bd3128 1px;
+  outline-width: 0;
+  outline: none;
+}
+form fieldset.success > label {
+  color: #6dbb47;
+}
+form fieldset.save {
+  text-align: center;
+}
+form fieldset.has-value label {
+  top: -10px;
+}
+form aside {
+  width: 49%;
+  margin: 0 2% 2% 0;
+  padding: 0;
+  float: left;
+}
+form aside:nth-child(2n+2) {
+  margin: 0 0 2% 0;
+}
+form aside div.tagsinput span.tag {
+  padding: 5px 15px 5px 15px;
+}
+form aside div.tagsinput span.tag span {
+  font-size: 1.3rem;
+}
+form aside p.uploadmessage {
+  width: 80%;
+  margin: 0 auto;
+}
+form > div#response {
+  padding: 2vh;
+  display: none;
+  /*height: 5vh;
+  line-height: 5vh;*/
+  /*background: red;*/
+  text-align: center;
+  margin: 2vh 0 2vh 0;
+  font-size: 1.5rem;
+  color: white;
+}
+form > div#response.error {
+  display: block;
+  background: #bd3128;
+}
+form > div#response.warning {
+  display: block;
+  background: #e9991f;
+}
+form > div#response.success {
+  display: block;
+  background: #6dbb47;
+}
+form iframe {
+  width: 100%;
+  height: 80vh;
+  margin-top: 50px;
+}
+form iframe[data-id=selectmedia] {
+  border: solid #444a54 2px;
+  clear: both;
+}
+form iframe[data-id=selectmedia]:after {
+  clear: both;
+  content: "";
+  display: block;
+}
+form iframe[data-id=selectmedia] + p + a {
+  clear: both;
+}
+form iframe.disabled {
+  background: #dadada;
+  height: 20vh;
+}
+form div.mce-tinymce:hover {
+  border: solid #1786ab 1px;
+  cursor: pointer;
+}
+form div.mce-tinymce.active {
+  border: solid #1786ab 1px;
+  cursor: pointer;
+}
+form div.maparea {
+  float: left;
+  margin: 0 0 0 0;
+  display: block;
+  width: 100%;
+}
+form div.maparea > div {
+  border: solid #444a54 1px;
+  outline-width: 0;
+  outline: none;
+  width: 100%;
+  height: 40vh;
+  float: left;
+  /*margin: 0 0 0 21vw;*/
+}
+form div.maparea > input {
+  flex: left;
+  width: 25vw;
+  margin: 0 0 2vh 1vw;
+}
+form div.checkboxgroup {
+  float: left;
+  margin: 0 0 0 0;
+  display: block;
+  width: 55vw;
+}
+form div.checkboxgroup span {
+  height: 5vh;
+  line-height: 5vh;
+  display: inline-block;
+  background: #dadada;
+  padding: 0 1vw 0 1vw;
+  margin: 0 1vw 1vw 0;
+}
+form select {
+  padding: 15px 0 15px 20px;
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  -ms-border-radius: 0;
+  -o-border-radius: 0;
+  border-radius: 0;
+  border: solid black 1px;
+  background-image: url("../ui/icon-dropdown.svg");
+  background-position: 95% 50%;
+  background-size: auto 25%;
+  background-color: white;
+  background-repeat: no-repeat;
+  appearance: none;
+  -webkit-appearance: none;
+  -webkit-border-radius: 0;
+  -o-appearance: none;
+  -o-border-radius: 0;
+  -moz-appearance: none;
+  -moz-border-radius: 0;
+  -ms-appearance: none;
+  -ms-border-radius: 0;
+}
+form select.s-hidden {
+  visibility: hidden;
+}
+form textarea {
+  /*width: 65%;*/
+  width: 53vw;
+  height: 20vh;
+  resize: none;
+  padding: 1vh 1vw 1vh 1vw;
+}
+form input[data-type*="_submit"], form input[data-type*="_cancel"] {
+  cursor: pointer;
+  border: none;
+  width: initial;
+  background: #66b7e3;
+  padding: 10px 25px 10px 25px;
+  color: #66b7e3;
+  font-style: normal;
+  font-family: "Roboto";
+  line-height: 2rem;
+  letter-spacing: 1px;
+  text-decoration: none;
+  text-align: center;
+  font-weight: bold;
+  font-size: 1.5rem;
+  text-transform: uppercase;
+  -webkit-appearance: none;
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.5) inset;
+  -moz-box-shadow: 0 1px 0 rgba(255, 255, 255, 0.5) inset;
+  -webkit-box-shadow: 0 1px 0 rgba(255, 255, 255, 0.5) inset;
+}
+form input[data-type*="_submit"] {
+  background: rgba(0, 0, 0, 0.7);
+  color: white;
+  border-top: solid rgba(218, 218, 218, 0.125) 2px;
+}
+form input[data-type*="_submit"]:not([disabled="disabled"]):hover {
+  cursor: pointer;
+  background: #1786ab;
+}
+form input[data-type*="_submit"]:not([disabled="disabled"]):focus, form input[data-type*="_submit"]:not([disabled="disabled"]):active {
+  cursor: pointer;
+  background: rgba(0, 0, 0, 0.75);
+  padding: 10px 25px 10px 25px;
+}
+form input[data-type*="_submit"][data-type*=filter_] {
+  margin: 0 0 0 0;
+  float: none;
+}
+form input[data-type*="_cancel"] {
+  /*margin-left: 21vw;*/
+  background: #dadada;
+  border: solid #dadada 1px;
+  color: white;
+}
+form input[data-type*="_cancel"]:not([disabled="disabled"]):hover {
+  background: #e9991f;
+  border: solid #e9991f 1px;
+  cursor: pointer;
+}
+form input[data-type*="_cancel"][data-type*=filter_] {
+  margin: 0 0 0 1vw;
+  float: none;
+}
+form#query fieldset:not(:first-child) {
+  /*display: none;*/
+}
+form.noe__tool {
+  margin: 3vw auto 5vw auto;
+}
+form.noe__tool div.tagsinput span.tag {
+  padding: 3px 5px 3px 15px;
+}
+form.noe__tool div.tagsinput span.tag span {
+  font-size: 1.4rem;
+  line-height: 2.5rem;
+}
+form.noe__tool textarea {
+  border: solid black 1px;
+  margin-top: 20px;
+}
+form.noe__tool textarea + label {
+  left: 0;
+  top: 0;
+}
+form.noe__tool .mce-tinymce {
+  margin-top: 20px;
+  width: 100%;
+}
+form.noe__tool select {
+  background-position: 98% 50%;
+  border: solid black 1px;
+}
+form.noe__tool select.has-value {
+  border: solid black 1px;
+}
+form#media_edit {
+  margin: 0;
+  padding: 40px 20px 0 20px;
+  border: 0;
+  box-shadow: none;
+}
+form#media_edit label.file {
+  display: none;
+}
+form.neo__formlist {
+  width: 100%;
+  margin: 4vw 0 0 2vw;
+}
+form.neo__formlist fieldset {
+  margin: 0;
+  padding: 1vw;
+  background: rgba(218, 218, 218, 0);
+  border: solid transparent 2px;
+}
+form.neo__formlist fieldset label {
+  position: relative;
+  top: 0;
+  left: 0;
+  color: #bd3128;
+}
+form.neo__formlist fieldset p {
+  color: #bd3128;
+}
+
+/* ***************************************************** */
+/* DATEPICKER BOX CUSTOM STYLES                          */
+/* ***************************************************** */
+.ui-datepicker {
+  height: auto;
+  margin: 5px auto 0 0;
+  -webkit-box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.5);
+  -moz-box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.5);
+  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.5);
+}
+.ui-datepicker a {
+  text-decoration: none;
+}
+.ui-datepicker table {
+  width: 100%;
+}
+.ui-datepicker table thead {
+  border-bottom: solid #dadada 1px;
+  background-color: #f7f7f7;
+  background-image: -moz-linear-gradient(top, #f7f7f7 0%, #f1f1f1 100%);
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #f7f7f7), color-stop(100%, #f1f1f1));
+  background-image: -webkit-linear-gradient(top, #f7f7f7 0%, #f1f1f1 100%);
+  background-image: -o-linear-gradient(top, #f7f7f7 0%, #f1f1f1 100%);
+  background-image: -ms-linear-gradient(top, #f7f7f7 0%, #f1f1f1 100%);
+  background-image: linear-gradient(top, #f7f7f7 0%, #f1f1f1 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f7f7f7', endColorstr='#f1f1f1',GradientType=0 );
+}
+.ui-datepicker table thead th {
+  font-style: normal;
+  font-weight: 200;
+  font-family: "Roboto";
+  line-height: 2rem;
+  letter-spacing: 1px;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 1.1rem;
+  color: black;
+  padding: 5px 0 5px 0;
+  text-shadow: 1px 0px 0px #fff;
+  filter: dropshadow(color=#fff, offx=1, offy=0);
+}
+.ui-datepicker table thead th span {
+  font-style: normal;
+  font-family: "Roboto";
+  line-height: 2rem;
+  letter-spacing: 1px;
+  text-decoration: none;
+  font-size: 1.1rem;
+  color: black;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+.ui-datepicker table tbody td {
+  border: solid #dadada 1px;
+  background: rgba(218, 218, 218, 0.25);
+  padding: 0;
+}
+.ui-datepicker table tbody td a, .ui-datepicker table tbody td span {
+  font-style: normal;
+  font-family: "Roboto";
+  letter-spacing: 1px;
+  text-transform: capitalize;
+  text-decoration: none;
+  font-weight: bold;
+  text-align: center;
+  line-height: 2.4rem;
+  font-size: 1.3rem;
+  color: rgba(0, 0, 0, 0.75);
+  width: 30px;
+  height: 30px;
+  display: inline-block;
+  text-shadow: 1px 1px 0px #fff;
+  filter: dropshadow(color=#fff, offx=1, offy=1);
+}
+.ui-datepicker .ui-datepicker-title {
+  text-align: center;
+}
+.ui-datepicker .ui-datepicker-title span {
+  color: white;
+}
+.ui-datepicker .ui-datepicker-prev, .ui-datepicker .ui-datepicker-next {
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  text-align: center;
+  overflow: visible;
+  line-height: 600%;
+  cursor: pointer;
+  background-image: url("../ui/arrow.png");
+  background-repeat: no-repeat;
+}
+.ui-datepicker .ui-widget-header .ui-icon {
+  background-image: url("../ui/arrow.png");
+  background-repeat: no-repeat;
+}
+.ui-datepicker .ui-datepicker-prev {
+  float: left;
+  background-position: center -30px;
+}
+.ui-datepicker .ui-datepicker-next {
+  float: right;
+  background-position: center 0px;
+}
+.ui-datepicker .ui-datepicker-calendar .ui-state-hover {
+  background: white;
+}
+.ui-datepicker .ui-state-highlight,
+.ui-datepicker .ui-widget-content .ui-state-highlight,
+.ui-datepicker .ui-widget-header .ui-state-highlight {
+  background: white;
+  color: #dadada;
+  border: solid rgba(0, 0, 0, 0.25) 1px;
+}
+.ui-datepicker .ui-datepicker-calendar .ui-state-active {
+  background: rgba(23, 134, 171, 0.75);
+  border: solid #1786ab 1px;
+  text-shadow: 1px 1px 0px black;
+}
+
+.ui-datepicker-header {
+  background: url("../ui/dark_leather.png") repeat 0 0 #000;
+  font-size: 1.7rem;
+  color: #66b7e3;
+  font-style: normal;
+  font-family: "Roboto";
+  letter-spacing: 1px;
+  text-transform: capitalize;
+  text-decoration: none;
+  font-weight: bold;
+  line-height: 2.5rem;
+  border: solid black 1px;
+  -webkit-box-shadow: inset 0px 1px 1px 0px #fafafa;
+  -moz-box-shadow: inset 0px 1px 1px 0px rgba(250, 250, 250, 0.2);
+  box-shadow: inset 0px 1px 1px 0px rgba(250, 250, 250, 0.2);
+  text-shadow: 1px -1px 0px #000;
+  filter: dropshadow(color=#000, offx=1, offy=-1);
+}
+
+/* ***************************************************** */
+/* TAGS INPUT CUSTOM STYLES                              */
+/* ***************************************************** */
+div.tagsinput {
+  padding: 0;
+  background: white;
+  width: 250px;
+  height: 52px;
+  overflow: hidden;
+  border-bottom: solid rgba(218, 218, 218, 0.25) 2px;
+}
+div.tagsinput input {
+  color: #66b7e3;
+  font-style: normal;
+  font-weight: 200;
+  font-family: "Roboto";
+  line-height: 2rem;
+  letter-spacing: 1px;
+  text-transform: capitalize;
+  text-decoration: none;
+  font-size: 1rem;
+  border: solid transparent 1px;
+  outline: 0px;
+}
+div.tagsinput span.tag {
+  background: #1786ab;
+  padding: 0px 3px 0 1px;
+  float: left;
+  display: block;
+  margin: 0 2px 2px 0;
+  border: solid rgba(0, 0, 0, 0.0125) 1px;
+}
+div.tagsinput span.tag span {
+  font-style: normal;
+  font-weight: 200;
+  font-family: "Roboto";
+  line-height: 2rem;
+  letter-spacing: 1px;
+  text-transform: capitalize;
+  text-decoration: none;
+  font-size: 0.9rem;
+  color: white;
+}
+div.tagsinput span.tag a {
+  font-style: normal;
+  font-family: "Roboto";
+  line-height: 2rem;
+  letter-spacing: 1px;
+  text-transform: capitalize;
+  font-weight: bold;
+  font-size: 1rem;
+  text-decoration: none;
+  color: rgba(0, 0, 0, 0.45);
+}
+div.tagsinput div {
+  float: left;
+  display: block;
+}
+
+.tags_clear {
+  clear: both;
+  width: 100%;
+  height: 0px;
+}
+
+.not_valid {
+  background: rgba(189, 49, 40, 0.5) !important;
+  color: white !important;
+}
+
+/* ***************************************************** */
+/* FORM STYLES    1280PX                                 */
+/* ***************************************************** */
+@media screen and (max-width: 1280px) {
+  form aside:nth-child(2n+2) label.file, form aside:nth-child(2n+2) p.uploadmessage, form aside:nth-child(2n+2) div.uploadbox {
+    width: 90%;
+  }
+}
+/* ***************************************************** */
+/* FORM STYLES    960PX                                  */
+/* ***************************************************** */
+@media screen and (max-width: 960px) {
+  form fieldset {
+    margin: 4vw 0 4vw 0;
+  }
+  form fieldset input[data-type="date"],
+  form fieldset textarea[data-type="date"],
+  form fieldset select[data-type="date"] {
+    width: 50%;
+  }
+  form fieldset input[data-type="orderweight"],
+  form fieldset textarea[data-type="orderweight"],
+  form fieldset select[data-type="orderweight"] {
+    width: 20%;
+  }
+  form div.maparea > input {
+    width: 38vw;
+  }
+  form aside {
+    width: 100%;
+  }
+  form aside:nth-child(2n+2) label.file, form aside:nth-child(2n+2) p.uploadmessage, form aside:nth-child(2n+2) div.uploadbox {
+    width: 100%;
+  }
+}
+/* ***************************************************** */
+/* FORM STYLES    720PX                                  */
+/* ***************************************************** */
+@media screen and (max-width: 720px) {
+  form {
+    width: 84%;
+  }
+  form fieldset {
+    margin: 2vw 0 5vw 0;
+  }
+  form.noe__tool {
+    width: 94%;
+    margin: 3vw 0 5vw auto;
+  }
+}
+/* ***************************************************** */
+/* FORM STYLES    460PX                                  */
+/* ***************************************************** */
+@media screen and (max-width: 460px) {
+  form {
+    width: 90%;
+    margin: 5vw 0 5vw auto;
+  }
+  form fieldset {
+    margin: 8vw 0 8vw 0;
+  }
+  form fieldset label {
+    font-size: 1.2rem;
+  }
+  form fieldset input[data-type="date"],
+  form fieldset textarea[data-type="date"],
+  form fieldset select[data-type="date"] {
+    width: 100%;
+  }
+  form input[data-type*="_submit"], form input[data-type*="_cancel"] {
+    padding: 10px 15px 10px 15px;
+  }
+}

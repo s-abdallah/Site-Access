@@ -1,0 +1,621 @@
+{
+  "USERS": {
+    "title": "Users",
+    "options": ["ADD", "EDIT", "REMOVE"],
+    "fields": {
+      "full_name": {
+        "type": "name",
+        "required": true,
+        "description": "The users full name",
+        "listby": 1
+      },
+      "email": {
+        "type": "email",
+        "required": true,
+        "placeholder": "me@you.com",
+        "description": "The users email address, also their username"
+      },
+      "password": {
+        "type": "password",
+        "required": true,
+        "description": "10 - 20 characters, at least 1 uppercase, at least 1 lowercase, at least 1 number",
+        "fieldlength": 20
+      },
+      "permissions_level": {
+        "type": "select",
+        "options": [["Administrator", "A"]],
+        "required": true,
+        "description": "The users access permissions"
+      },
+      "status": {
+        "type": "select",
+        "options": [
+          ["Active", "A"],
+          ["Suspended", "S"]
+        ],
+        "required": true,
+        "description": "The users current status"
+      }
+    }
+  },
+  "HOMEPAGESLIDER": {
+    "title": "Homepage Slider",
+    "options": ["ADD", "EDIT", "REMOVE"],
+    "media": true,
+    "fields": {
+      "title_line_1": {
+        "type": "text",
+        "required": true,
+        "description": "The first title line that will appear on dashboard",
+        "listby": 0
+      },
+      "slide_image": {
+        "type": "media",
+        "required": true,
+        "description": "",
+        "max": 1
+      },
+      "order_weight": {
+        "type": "orderweight",
+        "required": true,
+        "description": "The order from lowest to highest that items should appear in (0 = default, lowest)"
+      },
+      "tags": {
+        "type": "text",
+        "required": false,
+        "placeholder": "house,dog,man walking",
+        "description": "Additional tags to identify this entry"
+      }
+    }
+  },
+  "INTRODUCTION": {
+    "title": "Introduction",
+    "options": ["EDIT"],
+    "media": false,
+    "fields": {
+      "name": {
+        "type": "title",
+        "required": true,
+        "description": "The name of the Introduction as reference",
+        "listby": 0
+      },
+      "homepage_summary": {
+        "type": "copy",
+        "required": true,
+        "description": "The content to appear within the Homepage",
+        "richeditor": true
+      },
+      "overview_summary": {
+        "type": "copy",
+        "required": true,
+        "description": "The content to appear within the Overview Page",
+        "richeditor": true
+      }
+    }
+  },
+  "GALLERIES": {
+    "title": "Galleries",
+    "options": ["ADD", "EDIT", "REMOVE"],
+    "media": true,
+    "fields": {
+      "name": {
+        "type": "title",
+        "required": true,
+        "description": "The name of the gallery as reference",
+        "listby": 0
+      },
+      "page": {
+        "type": "select",
+        "multiselect": false,
+        "options": [["Overview", "overview"]],
+        "required": false,
+        "description": "Which page the gallery works out of"
+      },
+      "selected_media": {
+        "type": "media",
+        "required": false,
+        "description": ""
+      },
+      "order_weight": {
+        "type": "orderweight",
+        "required": true,
+        "description": "The order from lowest to highest that items should appear in (0 = default, lowest)"
+      },
+      "tags": {
+        "type": "text",
+        "required": false,
+        "placeholder": "house,dog,man walking",
+        "description": "Additional tags to identify this entry"
+      }
+    }
+  },
+  "COMPONENTS": {
+    "title": "Components",
+    "options": ["ADD", "EDIT", "REMOVE"],
+    "media": true,
+    "fields": {
+      "name": {
+        "type": "text",
+        "required": true,
+        "description": "The title of the page to be published",
+        "listby": 0
+      },
+      "set_link": {
+        "type": "select",
+        "multiselect": false,
+        "options": [
+          ["YES", "1"],
+          ["NO", "0"]
+        ],
+        "required": true,
+        "description": "Where do we want this component to link to"
+      },
+      "overview_title": {
+        "type": "text",
+        "required": true,
+        "description": "The title line that will appear within the Overview Page"
+      },
+      "overview_summary": {
+        "type": "copy",
+        "required": true,
+        "description": "The content to appear within the Overview Page",
+        "richeditor": true
+      },
+      "overview_image": {
+        "type": "media",
+        "required": true,
+        "description": "",
+        "max": 1,
+        "allowed": ["png", "jpg"]
+      },
+      "header": {
+        "type": "media",
+        "required": false,
+        "description": "",
+        "max": 1,
+        "allowed": ["png", "jpg"]
+      },
+      "logo": {
+        "type": "media",
+        "required": false,
+        "description": "",
+        "max": 1,
+        "allowed": ["png", "jpg"]
+      },
+      "title": {
+        "type": "text",
+        "required": false,
+        "description": "The title line that will appear on Building Overview Area"
+      },
+      "content": {
+        "type": "copy",
+        "required": false,
+        "description": "The content to appear within the Building Overview Area",
+        "richeditor": true
+      },
+      "amenities": {
+        "type": "copy",
+        "required": false,
+        "description": "The amenities to appear within the Building Overview Area",
+        "richeditor": true
+      },
+      "metrics_title_1": {
+        "type": "text",
+        "required": false,
+        "description": "The title line that will appear on Metrics First Item"
+      },
+      "metrics_value_1": {
+        "type": "text",
+        "required": false,
+        "description": "The value line that will appear on Metrics First Item"
+      },
+      "metrics_title_2": {
+        "type": "text",
+        "required": false,
+        "description": "The title line that will appear on Metrics Second Item"
+      },
+      "metrics_value_2": {
+        "type": "text",
+        "required": false,
+        "description": "The value line that will appear on Metrics Second Item"
+      },
+      "metrics_title_3": {
+        "type": "text",
+        "required": false,
+        "description": "The title line that will appear on Metrics Third Item"
+      },
+      "metrics_value_3": {
+        "type": "text",
+        "required": false,
+        "description": "The value line that will appear on Metrics Third Item"
+      },
+      "metrics_title_4": {
+        "type": "text",
+        "required": false,
+        "description": "The title line that will appear on Metrics Fourth Item"
+      },
+      "metrics_value_4": {
+        "type": "text",
+        "required": false,
+        "description": "The value line that will appear on Metrics Fourth Item"
+      },
+      "metrics_title_5": {
+        "type": "text",
+        "required": false,
+        "description": "The title line that will appear on Metrics Fifth Item"
+      },
+      "metrics_value_5": {
+        "type": "text",
+        "required": false,
+        "description": "The value line that will appear on Metrics Fifth Item"
+      },
+      "metrics_title_6": {
+        "type": "text",
+        "required": false,
+        "description": "The title line that will appear on Metrics Sixth Item"
+      },
+      "metrics_value_6": {
+        "type": "text",
+        "required": false,
+        "description": "The value line that will appear on Metrics Sixth Item"
+      },
+      "gallery": {
+        "type": "select",
+        "multiselect": false,
+        "options": "galleries:name",
+        "required": false,
+        "description": "Misc images, if not using other galleries select only this one"
+      },
+      "floor_plans_pdf": {
+        "type": "media",
+        "required": false,
+        "max": 1,
+        "description": "Downloadable PDF files",
+        "allowed": ["pdf"]
+      },
+      "views": {
+        "type": "media",
+        "required": false,
+        "description": "",
+        "max": 3,
+        "allowed": ["png", "jpg"]
+      },
+      "order_weight": {
+        "type": "orderweight",
+        "required": true,
+        "description": "The order from lowest to highest that items should appear in (0 = default, lowest)"
+      },
+      "tags": {
+        "type": "text",
+        "required": false,
+        "placeholder": "house,dog,man walking",
+        "description": "Additional tags to identify this entry"
+      }
+    }
+  },
+  "AVAILABILITY": {
+    "title": "Components Availabilty",
+    "options": ["ADD", "EDIT", "REMOVE"],
+    "media": true,
+    "fields": {
+      "component": {
+        "type": "select",
+        "multiselect": false,
+        "options": "components:name",
+        "required": true,
+        "description": "Select Main Component",
+        "listby": 0
+      },
+      "available": {
+        "type": "select",
+        "options": [
+          ["YES", "1"],
+          ["NO", "0"]
+        ],
+        "required": true,
+        "description": "The Floor current status"
+      },
+      "floor_id": {
+        "type": "text",
+        "required": true,
+        "description": "The Floor ID",
+        "listby": 0
+      },
+      "floor_name": {
+        "type": "text",
+        "required": true,
+        "description": "The Floor Name line"
+      },
+      "sq_ft": {
+        "type": "text",
+        "required": true,
+        "description": "The SQ FOOTAGE line"
+      },
+      "title_line_1": {
+        "type": "text",
+        "required": false,
+        "description": "The Title line For Floor Plan, for example Typical Floor Plan"
+      },
+      "sf_per_person": {
+        "type": "text",
+        "required": false,
+        "description": "The SF Per Person line, for example(000 SF/Person)"
+      },
+      "capacity": {
+        "type": "text",
+        "required": false,
+        "description": "The Capacity line, for example(00 People)"
+      },
+      "core_shell_image": {
+        "type": "media",
+        "required": true,
+        "description": "",
+        "max": 1,
+        "allowed": ["png", "jpg"]
+      },
+      "test_fit_title_1": {
+        "type": "text",
+        "required": false,
+        "description": "The Title line that will appear on TEST FIT A TAB"
+      },
+      "test_fit_image_1": {
+        "type": "media",
+        "required": false,
+        "description": "",
+        "max": 1,
+        "allowed": ["png", "jpg"]
+      },
+      "test_fit_title_2": {
+        "type": "text",
+        "required": false,
+        "description": "The Title line that will appear on TEST FIT B TAB"
+      },
+      "test_fit_image_2": {
+        "type": "media",
+        "required": false,
+        "description": "",
+        "max": 1,
+        "allowed": ["png", "jpg"]
+      },
+      "test_fit_title_3": {
+        "type": "text",
+        "required": false,
+        "description": "The Title line that will appear on TEST FIT C TAB"
+      },
+      "test_fit_image_3": {
+        "type": "media",
+        "required": false,
+        "description": "",
+        "max": 1,
+        "allowed": ["png", "jpg"]
+      },
+      "floor_pdf": {
+        "type": "media",
+        "required": false,
+        "max": 1,
+        "description": "Downloadable PDF files",
+        "allowed": ["pdf"]
+      },
+      "order_weight": {
+        "type": "orderweight",
+        "required": true,
+        "description": "The order from lowest to highest that items should appear in (0 = default, lowest)"
+      },
+      "tags": {
+        "type": "text",
+        "required": false,
+        "placeholder": "house,dog,man walking",
+        "description": "Additional tags to identify this entry"
+      }
+    }
+  },
+  "TEAM": {
+    "title": "Team",
+    "options": ["ADD", "EDIT", "REMOVE"],
+    "media": true,
+    "fields": {
+      "title_line_1": {
+        "type": "text",
+        "required": true,
+        "description": "The first title line that will appear on this team member",
+        "listby": 0
+      },
+      "link_title": {
+        "type": "text",
+        "required": true,
+        "description": "The link title line that will appear after team member bio"
+      },
+      "link": {
+        "type": "text",
+        "required": true,
+        "description": "Copy and paste the URL of the page to link to here"
+      },
+      "content": {
+        "type": "copy",
+        "required": true,
+        "description": "The content to appear within the Team Area",
+        "richeditor": true
+      },
+      "logo": {
+        "type": "media",
+        "required": false,
+        "description": "",
+        "max": 1,
+        "allowed": ["png"]
+      },
+      "order_weight": {
+        "type": "orderweight",
+        "required": true,
+        "description": "The order from lowest to highest that items should appear in (0 = default, lowest)"
+      }
+    }
+  },
+  "CONSULTANTTEAM": {
+    "title": "Consultant Team",
+    "options": ["ADD", "EDIT", "REMOVE"],
+    "media": true,
+    "fields": {
+      "title_line_1": {
+        "type": "text",
+        "required": true,
+        "description": "The first title line that will appear on this team member",
+        "listby": 0
+      },
+      "title_line_2": {
+        "type": "text",
+        "required": false,
+        "description": "The second title line that will appear before team summary"
+      },
+      "link_title": {
+        "type": "text",
+        "required": false,
+        "description": "The link title line that will appear after team member bio"
+      },
+      "link": {
+        "type": "text",
+        "required": false,
+        "description": "Copy and paste the URL of the page to link to here"
+      },
+      "content": {
+        "type": "copy",
+        "required": true,
+        "description": "The content to appear within the Consultant Team Area",
+        "richeditor": true
+      },
+      "logo": {
+        "type": "media",
+        "required": false,
+        "description": "",
+        "max": 1,
+        "allowed": ["png"]
+      },
+      "order_weight": {
+        "type": "orderweight",
+        "required": true,
+        "description": "The order from lowest to highest that items should appear in (0 = default, lowest)"
+      }
+    }
+  },
+  "NEWS": {
+    "title": "News",
+    "options": ["ALL", "ADD", "EDIT", "REMOVE"],
+    "media": true,
+    "fields": {
+      "title_line_1": {
+        "type": "text",
+        "required": true,
+        "description": "The first title line that will appear on this news section",
+        "listby": 0,
+        "listall": 1
+      },
+      "title_line_2": {
+        "type": "text",
+        "required": true,
+        "description": "The second title line that will appear after news title"
+      },
+      "link": {
+        "type": "text",
+        "required": false,
+        "description": "The Link to External Page"
+      },
+      "date": {
+        "type": "date",
+        "required": true,
+        "description": "The date line that will appear after news title"
+      },
+      "post_type": {
+        "type": "select",
+        "multiselect": false,
+        "options": [
+          ["Updates", "updates"],
+          ["News", "news"]
+        ],
+        "required": true,
+        "description": "The type of the news (by default it will news item)"
+      },
+      "post_header": {
+        "type": "media",
+        "required": false,
+        "description": "",
+        "max": 1,
+        "allowed": ["jpg", "png"]
+      },
+      "summary": {
+        "type": "copy",
+        "required": false,
+        "description": "A short summary of news"
+      },
+      "content": {
+        "type": "copy",
+        "required": false,
+        "description": "The content to appear within the news",
+        "richeditor": true
+      },
+      "order_weight": {
+        "type": "orderweight",
+        "required": true,
+        "description": "The order from lowest to highest that items should appear in (0 = default, lowest)"
+      },
+      "tags": {
+        "type": "text",
+        "required": false,
+        "placeholder": "house,dog,man walking",
+        "description": "Additional tags to identify this entry"
+      }
+    }
+  },
+  "CONTACT": {
+    "title": "Contact",
+    "options": ["ADD", "EDIT", "REMOVE"],
+    "media": false,
+    "fields": {
+      "category": {
+        "type": "select",
+        "options": [
+          ["DEVELOPMENT", "development"],
+          [" COMMERCIAL LEASING ", "commercial"],
+          ["  PRESS & MEDIA  ", "media"]
+        ],
+        "required": true,
+        "description": "The Contact current category"
+      },
+      "name": {
+        "type": "title",
+        "required": true,
+        "description": "The name to appear within the Contact",
+        "listby": 0
+      },
+      "position": {
+        "type": "title",
+        "required": true,
+        "description": "The Position to appear within the Contact"
+      },
+      "email": {
+        "type": "title",
+        "required": false,
+        "description": "The E-Mail to appear within the Contact"
+      },
+      "direct": {
+        "type": "title",
+        "required": false,
+        "description": "The Direct to appear within the Contact (000.000.0000)"
+      },
+      "mobile": {
+        "type": "title",
+        "required": false,
+        "description": "The Mobile to appear within the Contact (000.000.0000)"
+      },
+      "order_weight": {
+        "type": "orderweight",
+        "required": true,
+        "description": "The order from lowest to highest that items should appear in (0 = default, lowest)"
+      },
+      "tags": {
+        "type": "text",
+        "required": false,
+        "placeholder": "house,dog,man walking",
+        "description": "Additional tags to identify this entry"
+      }
+    }
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "startMarker": {
+    "image": "_ui/maps/startmarker.png",
+    "label": "This is the property",
+    "position": {
+      "lat": 42.3430637,
+      "lon": -71.0319362
+    }
+  }
+}
